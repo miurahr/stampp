@@ -37,6 +37,7 @@ import org.eclipse.ui.part.ViewPart;
 import xstampp.ui.common.ProjectManager;
 import xstampp.ui.editors.StandartEditorPart;
 import xstpa.Activator;
+import xstpa.Messages;
 import xstpa.model.XSTPADataController;
 import xstpa.ui.tables.AbstractTableComposite;
 import xstpa.ui.tables.CADependenciesTable;
@@ -44,23 +45,6 @@ import xstpa.ui.tables.ControlActionTable;
 import xstpa.ui.tables.ProcessContextTable;
 import xstpa.ui.tables.ProcessValuesTable;
 import xstpa.ui.tables.RefinedRulesTable;
-
-import static xstpa.ui.Labels.COMMENTS;
-import static xstpa.ui.Labels.CONTEXT;
-import static xstpa.ui.Labels.CONTEXT_TABLE;
-import static xstpa.ui.Labels.CONTROLLER;
-import static xstpa.ui.Labels.CONTROL_ACTIONS;
-import static xstpa.ui.Labels.CRITICAL_COMBI;
-import static xstpa.ui.Labels.DEPENDENCIES_TABLE;
-import static xstpa.ui.Labels.ENTRY_ID;
-import static xstpa.ui.Labels.PM;
-import static xstpa.ui.Labels.PMV;
-import static xstpa.ui.Labels.PMVV;
-import static xstpa.ui.Labels.REFINED_RULES;
-import static xstpa.ui.Labels.REL_HAZ;
-import static xstpa.ui.Labels.RULES_TABLE;
-import static xstpa.ui.Labels.SAFETY_CRITICAL;
-import static xstpa.ui.Labels.UCA;
 
 public class View extends ViewPart{
 	public static final String ID = "xstpa.view.contextTables";
@@ -74,18 +58,18 @@ public class View extends ViewPart{
 	 * String array that contains all headers for the columns of the 
 	 * properties table that shows all process values
 	 */
-	public static final String[] PROPS_COLUMNS = { CONTROLLER, PM, PMV, PMVV, COMMENTS };
+	public static final String[] PROPS_COLUMNS = { Messages.CONTROLLER, Messages.PM, Messages.PMV, Messages.PMVV, Messages.COMMENTS };
 	/**
 	 * String array that contains all headers for the columns of the 
 	 * control actions table that contains all stored control actions
 	 */
-	public static final String[] CA_PROPS_COLUMNS = { CONTROL_ACTIONS, SAFETY_CRITICAL, COMMENTS};
+	public static final String[] CA_PROPS_COLUMNS = { Messages.CONTROL_ACTIONS, Messages.SAFETY_CRITICAL, Messages.COMMENTS};
 
 	/**
 	 * String array that contains all headers for the columns of the 
 	 * refined safety constraints table that cpntains all process values
 	 */
-	public static final String[] RS_PROPS_COLUMS = { ENTRY_ID, CONTROL_ACTIONS, CONTEXT, CRITICAL_COMBI, UCA, REL_HAZ, REFINED_RULES};
+	public static final String[] RS_PROPS_COLUMS = { Messages.ENTRY_ID, Messages.CONTROL_ACTIONS, Messages.CONTEXT, Messages.CRITICAL_COMBI, Messages.UCA, Messages.REL_HAZ, Messages.REFINED_RULES};
 
 	
 	// static fields to hold the images
@@ -141,7 +125,7 @@ public class View extends ViewPart{
 	 */
 	public void createPartControl(Composite parent) {
 	    // set title and Image
-	    setPartName(CONTEXT_TABLE);
+	    setPartName(Messages.CONTEXT_TABLE);
 	    //this.setContentDescription("Shows the Process Models and Context Tables");
 	    setTitleImage(LOGO);
 	    
@@ -177,19 +161,19 @@ public class View extends ViewPart{
 	    this.tableList = new ArrayList<>();
 	    
 	    AbstractTableComposite mainTable = new ProcessValuesTable(xstpaTableComposite);
-	    addTable(mainTable, PM);
+	    addTable(mainTable, Messages.PM);
 	    
 	    AbstractTableComposite compositeTable = new ControlActionTable(xstpaTableComposite);
-	    addTable(compositeTable, CONTROL_ACTIONS);
+	    addTable(compositeTable, Messages.CONTROL_ACTIONS);
 	    
 	    compositeTable = new CADependenciesTable(xstpaTableComposite);
-	    addTable(compositeTable, DEPENDENCIES_TABLE);
+	    addTable(compositeTable, Messages.DEPENDENCIES_TABLE);
 	    
 	    compositeTable = new ProcessContextTable(xstpaTableComposite);
-	    addTable(compositeTable, CONTEXT_TABLE);
+	    addTable(compositeTable, Messages.CONTEXT_TABLE);
 	    
 	    compositeTable = new RefinedRulesTable(xstpaTableComposite);
-	    addTable(compositeTable, RULES_TABLE);
+	    addTable(compositeTable, Messages.RULES_TABLE);
 	    
 	    IEditorPart part = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 	    if(part != null && part instanceof StandartEditorPart){

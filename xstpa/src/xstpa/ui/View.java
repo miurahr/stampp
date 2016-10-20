@@ -35,72 +35,42 @@ import xstpa.ui.tables.ProcessContextTable;
 import xstpa.ui.tables.ProcessValuesTable;
 import xstpa.ui.tables.RefinedRulesTable;
 
+import static xstpa.ui.Labels.COMMENTS;
+import static xstpa.ui.Labels.CONTEXT;
+import static xstpa.ui.Labels.CONTEXT_TABLE;
+import static xstpa.ui.Labels.CONTROLLER;
+import static xstpa.ui.Labels.CONTROL_ACTIONS;
+import static xstpa.ui.Labels.CRITICAL_COMBI;
+import static xstpa.ui.Labels.DEPENDENCIES_TABLE;
+import static xstpa.ui.Labels.ENTRY_ID;
+import static xstpa.ui.Labels.PM;
+import static xstpa.ui.Labels.PMV;
+import static xstpa.ui.Labels.PMVV;
+import static xstpa.ui.Labels.REFINED_RULES;
+import static xstpa.ui.Labels.REL_HAZ;
+import static xstpa.ui.Labels.RULES_TABLE;
+import static xstpa.ui.Labels.SAFETY_CRITICAL;
+import static xstpa.ui.Labels.UCA;
+
 public class View extends ViewPart{
 	public static final String ID = "xstpa.view.contextTables";
-	
-	// Table column names/properties
-	public static final String CONTROLLER = "Controllers";
 
-	public static final String PM = "Process Models";
-
-	public static final String PMV = "Process Model Variables";
-
-	public static final String PMVV = "Values";
-	
-	public static final String COMMENTS = "Description";
-	
-	public static final String CONTROL_ACTIONS = "Control Actions";
-	
-	public static final String SAFETY_CRITICAL = "Safety Critical";
-	
+	// Table column properties
 	public static final String CONTROLLER_WITH_PM_CLASS = "xstpa.ControllerWithPMEntry";
-	
 	public static final String CA_ENTRY_CLASS = "xstpa.ControlActionEntrys";
-	
 	public static final String PM_VALUE_CLASS = "xstpa.ProcessModelVariables";
-	
-	public static final String ENTRY_ID = "ID";
-	
-	public static final String LIST_of_CA = "List of Control Actions";
-	
-	public static final String CONTEXT = "Context";
-	
-	public static final String IS_HAZARDOUS = "Hazardous?";
-	
-	public static final String HAZ_IF_ANYTIME = "Hazardous if provided anytime";
-	
-	/**
-	 * String <i>Hazardous if provided to early</i> 
-	 */
-	public static final String HAZ_IF_EARLY = "Hazardous if provided to early";
-	
-	public static final String HAZ_IF_LATE = "Hazardous if provided to late";
-	
-	public static final String LTL_RULES = "LTL Formula";
-	
-	public static final String UCA = "Related Unsafe CA";
 
-	public static final String REL_HAZ = "Linked Hazards";
-	
-	public static final String REFINED_RULES = "generated Rules";
-	
-	public static final String CRITICAL_COMBI = "Critical Combinations";
-
-	public static final String CONTEXT_TABLE="Context Table";
-	
-	public static final String CONTEXT_TYPE="Type";
 	/**
 	 * String array that contains all headers for the columns of the 
 	 * properties table that shows all process values
 	 */
 	public static final String[] PROPS_COLUMNS = { CONTROLLER, PM, PMV, PMVV, COMMENTS };
-	public static final String RULES_TABLE = "Rules Table";
 	/**
 	 * String array that contains all headers for the columns of the 
 	 * control actions table that contains all stored control actions
 	 */
 	public static final String[] CA_PROPS_COLUMNS = { CONTROL_ACTIONS, SAFETY_CRITICAL, COMMENTS};
-	
+
 	/**
 	 * String array that contains all headers for the columns of the 
 	 * refined safety constraints table that cpntains all process values
@@ -145,7 +115,6 @@ public class View extends ViewPart{
 	
 	Table  ltlTable;
 	
-	
 
 	private List<AbstractTableComposite> tableList;
 	private List<Button> tableButtons;
@@ -162,7 +131,7 @@ public class View extends ViewPart{
 	 */
 	public void createPartControl(Composite parent) {
 	    // set title and Image
-	    setPartName("Context Tables");
+	    setPartName(CONTEXT_TABLE);
 	    //this.setContentDescription("Shows the Process Models and Context Tables");
 	    setTitleImage(LOGO);
 	    
@@ -201,13 +170,13 @@ public class View extends ViewPart{
 	    addTable(mainTable, PM);
 	    
 	    AbstractTableComposite compositeTable = new ControlActionTable(xstpaTableComposite);
-	    addTable(compositeTable, "Control Actions");
+	    addTable(compositeTable, CONTROL_ACTIONS);
 	    
 	    compositeTable = new CADependenciesTable(xstpaTableComposite);
-	    addTable(compositeTable, "Dependencies");
+	    addTable(compositeTable, DEPENDENCIES_TABLE);
 	    
 	    compositeTable = new ProcessContextTable(xstpaTableComposite);
-	    addTable(compositeTable, "Context Table");
+	    addTable(compositeTable, CONTEXT_TABLE);
 	    
 	    compositeTable = new RefinedRulesTable(xstpaTableComposite);
 	    addTable(compositeTable, RULES_TABLE);

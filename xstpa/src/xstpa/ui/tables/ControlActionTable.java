@@ -32,6 +32,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 
+import xstpa.Messages;
 import xstpa.model.ControlActionEntry;
 import xstpa.model.XSTPADataController;
 import xstpa.ui.View;
@@ -116,13 +117,13 @@ public class ControlActionTable extends AbstractTableComposite{
  // add Columns for Control Actions table (list of control actions)
 	    
 	    TableColumn caColumn = new TableColumn(controlActionTable, SWT.LEFT);
-	    caColumn.setText(View.CONTROL_ACTIONS);
+	    caColumn.setText(Messages.CONTROL_ACTIONS);
 	    ((AbstractColumnLayout) getLayout()).setColumnData(caColumn, new ColumnWeightData(1, 30, false));
 	    caColumn = new TableColumn(controlActionTable, SWT.LEFT);
-	    caColumn.setText(View.SAFETY_CRITICAL);
+	    caColumn.setText(Messages.SAFETY_CRITICAL);
 	    ((AbstractColumnLayout) getLayout()).setColumnData(caColumn, new ColumnWeightData(1, 30, false));
 	    caColumn = new TableColumn(controlActionTable, SWT.LEFT);
-	    caColumn.setText(View.COMMENTS);
+	    caColumn.setText(Messages.COMMENTS);
 	    ((AbstractColumnLayout) getLayout()).setColumnData(caColumn, new ColumnWeightData(1, 30, false));
 	    
 	 // listener for the checkboxes in the control Action table so they get drawn right

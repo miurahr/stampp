@@ -8,13 +8,14 @@ import xstampp.astpa.ui.sds.AbstractFilteredTableView;
 import xstampp.model.AbstractLTLProvider;
 import xstampp.model.ObserverValue;
 import xstampp.ui.common.ProjectManager;
+import xstpa.Messages;
 import xstpa.ui.LTLEntryFilter;
 import xstpa.ui.View;
 
 public class LTLPropertiesTable extends AbstractFilteredTableView{
 
 	public LTLPropertiesTable() {
-		super(new LTLEntryFilter(), new String[]{View.ENTRY_ID,View.LTL_RULES});
+		super(new LTLEntryFilter(), new String[]{Messages.ENTRY_ID, Messages.LTL_RULES});
 		setColumnWeights(new int[]{-1,15});
 	}
 

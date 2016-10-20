@@ -46,6 +46,7 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Text;
 
 import xstampp.util.STPAPluginUtils;
+import xstpa.Messages;
 import xstpa.model.ControlActionEntry;
 import xstpa.model.ProcessModelVariables;
 import xstpa.model.Relation;
@@ -53,6 +54,7 @@ import xstpa.settings.PreferenceInitializer;
 import xstpa.settings.PreferencePageSettings;
 import xstpa.settings.XSTPAPreferenceConstants;
 import xstpa.ui.View;
+
 
 /**
  * 
@@ -97,12 +99,9 @@ public class EditWindow
     private Shell shell;
     // this Variables store the modes for ACTS   
     public static final String[] DALGO = { "ipog", "ipof", "ipof2", "ipog_d", "basechoice" };
-    public static final String[] DALGO_TIP={
-    	"For a moderate size System (max. 20 Parameters)",
-    	"For a moderate size System (20 Parameters)",
-    	"For a moderate size System (20 Parameters)",
-    	"For a large size System",
-    	"A special oneway testing Algorithm"
+    public static final String[] DALGO_TIP={ Messages.FOR_MODERATE_SIZE_SYSTEM,
+			Messages.FOR_MODERATE_SIZE_SYSTEM, Messages.FOR_MODERATE_SIZE_SYSTEM, Messages.FOR_LARGE_SIZE_SYSTEM,
+            Messages.SPECIAL_TESTING_ALGO
     };
 
     public static final String[] DSTRENGTH_LABELS ={"1","2","3","4","5","6","mixed"}; 
@@ -111,9 +110,9 @@ public class EditWindow
     public static final String[] DMODE = { "scratch", "extend" };
 
     public static final String[] DCHANDLER = { "no", "forbiddentuples" , "solver"};
-    public static final String[] DCHANDLER_LABELS = {"Ignore Constraints",
-    												"Forbidden Tuples (default)",
-    												"CSP Solver"};
+    public static final String[] DCHANDLER_LABELS = {Messages.IGNORE_CONSTRAINTS,
+    												Messages.FORBIDDEN_TUPLES,
+    												Messages.CSP_SOLVER};
     
     public static final String[] BOOL_TABLE = {"&&", "||", "=>"};
     public static final String[] RATIONAL_TABLE = {">", "<", "=", "!=", ">=", "<="};
@@ -215,7 +214,7 @@ public class EditWindow
         
         
         shell.setLayout(new FormLayout());
-        shell.setText("Context Table Settings");
+        shell.setText(Messages.CONTEXT_TABLE_SETTINGS);
         shell.setImage(View.LOGO);
         this.linkedCAE = linkedCAE;
 
@@ -246,21 +245,21 @@ public class EditWindow
 	    formLayout.spacing = 5;
 	    
 	    TabItem tab1 = new TabItem(folder, SWT.NONE);
-	    tab1.setText("General Options");
+	    tab1.setText(Messages.GENERAL_OPTIONS);
 	    tab1.setControl(createConfigComposite(folder, formLayout));
 
 	    TabItem tab2 = new TabItem(folder, SWT.NONE);
-	    tab2.setText("Relations");
+	    tab2.setText(Messages.RELATIONS);
 	    tab2.setControl(createRelationsComposite(folder, formLayout));
 	    
 	    TabItem tab3 = new TabItem(folder, SWT.NONE);
-	    tab3.setText("Constraints");
+	    tab3.setText(Messages.CONSTRAINTS);
 	    tab3.setControl(createConstraintsPage(folder, formLayout));
 	    
 	    
 	    // Apply Button
 	    Button ok = new Button(parent, SWT.PUSH);
-	    ok.setText("Ok");
+	    ok.setText(Messages.OK_BUTTON);
 	    FormData fData = new FormData();
 	    fData.right = new FormAttachment(100);
 	    fData.bottom = new FormAttachment(100);
@@ -275,7 +274,7 @@ public class EditWindow
 	    });
 	    
 	    Button cancel = new Button(parent, SWT.PUSH);
-	    cancel.setText("Cancel");
+	    cancel.setText(Messages.CANCEL_BUTTON);
 	    fData = new FormData();
 	    fData.right = new FormAttachment(ok,-20);
 	    fData.bottom = new FormAttachment(100);
@@ -323,7 +322,7 @@ public class EditWindow
 	    radioButtonsLabelComposite.setLayoutData( fData );
 	    
 	    Group algoGroup = new Group(radioButtonsLabelComposite, SWT.NONE);
-	    algoGroup.setText("Algorithm: ");
+	    algoGroup.setText(Messages.ALGORITHM_LABEL);
 	    algoGroup.setLayout(new GridLayout(5, false));
 	    
 	    
@@ -363,7 +362,7 @@ public class EditWindow
 	   
 	    // Add the components for the middle (main) part
 	    Label strengthLabel = new Label(mainComposite, SWT.NONE);
-	    strengthLabel.setText("Strength: ");
+	    strengthLabel.setText(Messages.STRENGTH_LABEL);
 	    
 	    strengthCombo = new Combo(mainComposite, SWT.READ_ONLY);
 	    for(String strength:DSTRENGTH_LABELS){
@@ -379,7 +378,7 @@ public class EditWindow
 	    
 	    //Second Row
 	    Label modeLabel = new Label(mainComposite, SWT.NONE);
-	    modeLabel.setText("Mode: ");
+	    modeLabel.setText(Messages.MODE_LABEL);
 	    
 	    modeCombo = new Combo(mainComposite, SWT.READ_ONLY);
 	    modeCombo.add(DMODE[0]);
@@ -391,7 +390,7 @@ public class EditWindow
 	   
 	    //Third Row
 	    Label constraintHandlingLabel = new Label(mainComposite, SWT.WRAP);
-	    constraintHandlingLabel.setText("Constraint\nHandling: ");
+	    constraintHandlingLabel.setText(Messages.CONSTRAINT_HANDLING_LABEL);
 	    constraintHandlingLabel.pack();
 	    
 	    handlingCombo = new Combo(mainComposite, SWT.READ_ONLY);
@@ -410,11 +409,11 @@ public class EditWindow
 	    
 	    // Button which calls the PreferencePage for the ACTS Path
 	    Button setPathBtn = new Button(buttonsComposite, SWT.PUSH);
-	    setPathBtn.setText("Set ACTS Path");
+	    setPathBtn.setText(Messages.SET_ACTS_PATH_BUTTON);
 	    setPathBtn.setLayoutData(new GridData(100, 30));
 	    
 	    Button loadDefaults = new Button(buttonsComposite, SWT.PUSH);
-	    loadDefaults.setText("Load Defaults");
+	    loadDefaults.setText(Messages.LOAD_DEFAULT_BUTTON);
 	    loadDefaults.setLayoutData(new GridData(100, 30));
 	    /**
 	     * Functionality of the setPathBtn
@@ -422,8 +421,8 @@ public class EditWindow
 	    setPathBtn.addSelectionListener(new SelectionAdapter() {
 	    	public void widgetSelected(SelectionEvent event) {
 	    		Map<String,String> values=new HashMap<>();
-  	    	  	values.put("preferencePageId", PreferencePageSettings.ID);
-  	    	  	STPAPluginUtils.executeParaCommand("org.eclipse.ui.window.preferences", values);
+  	    	  	values.put("preferencePageId", PreferencePageSettings.ID); //NOI18N
+  	    	  	STPAPluginUtils.executeParaCommand("org.eclipse.ui.window.preferences", values); //NOI18N
   	    	  
 	    	}
 	    });
@@ -500,7 +499,7 @@ public class EditWindow
 	    
 	    // Add the Label for relationParamListComposite
 	    Label params = new Label(relationParamlistComposite, SWT.NONE);
-	    params.setText("Parameters");
+	    params.setText(Messages.PARAMETERS_LABEL);
 	    
 	    // Add the List for relationParamListComposite
 	    final org.eclipse.swt.widgets.List paramList = new org.eclipse.swt.widgets.List(relationParamlistComposite, SWT.BORDER | SWT.MULTI | SWT.V_SCROLL);
@@ -512,20 +511,20 @@ public class EditWindow
 	    
 	    // Add the Label for the relationButtonsComposite
 	    Label strength = new Label(relationButtonsComposite, SWT.NONE);
-	    strength.setText("Strength");
+	    strength.setText(Messages.STRENGTH_LABEL2);
 	    
 	    //Add the Textbox for the relationButtonsComposite
 	    final Text strengthBox = new Text(relationButtonsComposite, SWT.BORDER);
 	    
 	    // Add the Buttons for the relationButtonsComposite
 	    final Button addRel = new Button(relationButtonsComposite, SWT.PUSH);
-	    addRel.setText("Add");
+	    addRel.setText(Messages.ADD_BUTTON);
 	    data = new GridData(77, SWT.DEFAULT);
 	    addRel.setLayoutData(data);
 	    addRel.setEnabled(false);
 	    
 	    final Button removeRel = new Button(relationButtonsComposite, SWT.PUSH);
-	    removeRel.setText("Remove");
+	    removeRel.setText(Messages.REMOVE_BUTTON);
 	    data = new GridData(77, SWT.DEFAULT);
 	    removeRel.setLayoutData(data);
 	    removeRel.setEnabled(false);
@@ -546,8 +545,8 @@ public class EditWindow
 	    relationsTable.setLayoutData(data);
 	    
 	    // add Columns for the parameterTable
-	    new TableColumn(relationsTable, SWT.CENTER).setText("Strength");
-	    new TableColumn(relationsTable, SWT.CENTER).setText("Parameter Names");
+	    new TableColumn(relationsTable, SWT.CENTER).setText(Messages.STRENGTH_LABEL2);
+	    new TableColumn(relationsTable, SWT.CENTER).setText(Messages.PARAMETER_NAMES);
 	    relationsTable.setHeaderVisible(true);
 	    relationsTable.setLinesVisible(true);	    	    
 	    relationsTableViewer.setInput(relations);
@@ -680,7 +679,7 @@ public class EditWindow
 	    
 	    // Add the group for constraintEditorComposite
 	    Group constraintEditorGroup = new Group(constraintEditorComposite, SWT.NONE);
-	    constraintEditorGroup.setText("Constraint Editor");	   
+	    constraintEditorGroup.setText(Messages.CONSTRAINT_EDITOR);
 	    constraintEditorGroup.setLayout(new GridLayout(1, false));
 	    
 	    
@@ -713,7 +712,7 @@ public class EditWindow
 	    
 	    // Add the Group for constraintDisplayComposite
 	    Group constraintDisplayGroup = new Group(constraintDisplayComposite, SWT.NONE);
-	    constraintDisplayGroup.setText("Added Constraints");
+	    constraintDisplayGroup.setText(Messages.ADDED_CONSTRAINTS);
 	    constraintDisplayGroup.setLayout(new GridLayout(1, false));
 	    
 	    
@@ -728,7 +727,7 @@ public class EditWindow
 	    
 	    // Add the group for constraint Commands
 	    Group constraintCommandsGroup = new Group(constraintCommandsComposite, SWT.NONE);
-	    constraintCommandsGroup.setText("Symbols");
+	    constraintCommandsGroup.setText(Messages.SYMBOLS);
 	    constraintCommandsGroup.setLayout(new GridLayout(21, false));
 	    
 	    
@@ -742,7 +741,7 @@ public class EditWindow
 	    }
 	    // add the group for constraintTableComposite
 	    Group constraintTableGroup = new Group(constraintTableComposite, SWT.NONE);
-	    constraintTableGroup.setText("Parameters");
+	    constraintTableGroup.setText(Messages.PARAMETERS_LABEL);
 	    constraintTableGroup.setLayout(new GridLayout(1, false));
 	    
 	    // add the table for constraintTableComposite
@@ -756,7 +755,7 @@ public class EditWindow
 	    
 	    // add Columns for the parameterTable
 	    TableViewerColumn variableCViewer = new TableViewerColumn(constraintTableViewer, SWT.CENTER);
-	    variableCViewer.getColumn().setText("Parameter Name");
+	    variableCViewer.getColumn().setText(Messages.PARAMETER_NAME);
 	    final ColumnLabelProvider variableProvider =new ColumnLabelProvider(){
 	    	@Override
 	    	public String getText(Object element) {
@@ -797,7 +796,7 @@ public class EditWindow
 	    		return valueProvider.getText(element);
 	    	}
 	    });
-	    valueCViewer.getColumn().setText("Parameter Value");
+	    valueCViewer.getColumn().setText(Messages.PARAMETER_VALUE);
 	    valueCViewer.setLabelProvider(valueProvider);
 	    
 	    parameterTable.setHeaderVisible(true);
@@ -817,7 +816,7 @@ public class EditWindow
 	    editor = new Text(constraintEditorGroup, SWT.BORDER);    
 	    data = new GridData(310, 124);
 	    editor.setLayoutData(data);
-	    editor.setMessage("Enter a Expression: e.g. Variable == \"Value\"");
+	    editor.setMessage(Messages.ENTER_A_EXPRESSION);
 	    // Add the Buttons for constraint Editor Composite
 	    Button clear = new Button(constraintEditorButtonsComposite, SWT.PUSH);
 	    clear.setText("Clear");
@@ -831,7 +830,7 @@ public class EditWindow
 	    });
 	    
 	    Button addConstraint = new Button(constraintEditorButtonsComposite, SWT.PUSH);
-	    addConstraint.setText("Add Constraint");
+	    addConstraint.setText(Messages.ADDED_CONSTRAINTS);
 	    addConstraint.setLayoutData(new GridData());
 	    	    
 	    

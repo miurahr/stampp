@@ -14,6 +14,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Table;
 
+import xstpa.Messages;
 import xstpa.model.ProcessModelValue;
 import xstpa.model.XSTPADataController;
 import xstpa.ui.View;
@@ -59,7 +60,7 @@ public class ProcessValuesTable extends AbstractTableComposite {
 	    
 		// add Columns for the mainTable
 	    TableViewerColumn valuesColumn = new TableViewerColumn(mainViewer, SWT.LEFT);
-	    valuesColumn.getColumn().setText(View.CONTROLLER);
+	    valuesColumn.getColumn().setText(Messages.CONTROLLER);
 	    valuesColumn.setLabelProvider(new ValueLabelsProvider() {
 	    	public String getText(Object element) {
 				return ((ProcessModelValue) element).getController();
@@ -69,7 +70,7 @@ public class ProcessValuesTable extends AbstractTableComposite {
 	    tLayout.setColumnData(valuesColumn.getColumn(), new ColumnWeightData(1, 30, false));
 	    
 	    valuesColumn = new TableViewerColumn(mainViewer, SWT.LEFT);
-	    valuesColumn.getColumn().setText(View.PM);
+	    valuesColumn.getColumn().setText(Messages.PM);
 	    valuesColumn.setLabelProvider(new ValueLabelsProvider() {
 	    	public String getText(Object element) {
 				return ((ProcessModelValue) element).getPM();
@@ -79,7 +80,7 @@ public class ProcessValuesTable extends AbstractTableComposite {
 	    tLayout.setColumnData(valuesColumn.getColumn(), new ColumnWeightData(1, 30, false));
 	    
 	    valuesColumn = new TableViewerColumn(mainViewer, SWT.LEFT);
-	    valuesColumn.getColumn().setText(View.PMV);
+	    valuesColumn.getColumn().setText(Messages.PMV);
 	    valuesColumn.setLabelProvider(new ValueLabelsProvider() {
 	    	public String getText(Object element) {
 				return ((ProcessModelValue) element).getPMV();
@@ -89,7 +90,7 @@ public class ProcessValuesTable extends AbstractTableComposite {
 	    tLayout.setColumnData(valuesColumn.getColumn(), new ColumnWeightData(2, 50, false));
 	    
 	    valuesColumn = new TableViewerColumn(mainViewer, SWT.LEFT);
-	    valuesColumn.getColumn().setText(View.PMVV);
+	    valuesColumn.getColumn().setText(Messages.PMVV);
 	    valuesColumn.setLabelProvider(new ValueLabelsProvider() {
 	    	public String getText(Object element) {
 				return ((ProcessModelValue) element).getValueText();
@@ -99,7 +100,7 @@ public class ProcessValuesTable extends AbstractTableComposite {
 	    tLayout.setColumnData(valuesColumn.getColumn(), new ColumnWeightData(1, 30, false));
 	    
 	    valuesColumn = new TableViewerColumn(mainViewer, SWT.LEFT);
-	    valuesColumn.getColumn().setText(View.COMMENTS);
+	    valuesColumn.getColumn().setText(Messages.COMMENTS);
 	    valuesColumn.setLabelProvider(new ValueLabelsProvider() {
 	    	public String getText(Object element) {
 				return ((ProcessModelValue) element).getComments();

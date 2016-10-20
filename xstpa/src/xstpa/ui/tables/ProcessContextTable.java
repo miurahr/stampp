@@ -246,7 +246,7 @@ public class ProcessContextTable extends AbstractTableComposite {
 			controlActionTable = controlActionViewer.getTable();
 			controlActionTable.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 			 // add columns for context tables
-		    new TableColumn(controlActionTable, SWT.LEFT).setText(View.LIST_of_CA);
+		    new TableColumn(controlActionTable, SWT.LEFT).setText(Messages.LIST_of_CA);
 		//===============================================================================
 		//END
 		//================================================================================
@@ -699,7 +699,7 @@ public class ProcessContextTable extends AbstractTableComposite {
   			return;
   		}
   		if (!dataController.getLinkedCAE().getLinkedItems().isEmpty()) {
-  			new TableColumn(contextTable, SWT.NONE).setText(View.ENTRY_ID);
+  			new TableColumn(contextTable, SWT.NONE).setText(Messages.ENTRY_ID);
   			// creates new TableColumns dynamically so that the context table has the right size (and labels)
   			for (int i=0;i<dataController.getLinkedCAE().getLinkedItems().size();i++) {
   				UUID id = dataController.getLinkedCAE().getLinkedItems().get(i).getId();
@@ -709,7 +709,7 @@ public class ProcessContextTable extends AbstractTableComposite {
   			if (dataController.isControlActionProvided()) {
   				new TableColumn(contextTable, SWT.NONE).setImage(View.HEADER);
   			}else{
-  				new TableColumn(contextTable, SWT.NONE).setText(View.IS_HAZARDOUS);
+  				new TableColumn(contextTable, SWT.NONE).setText(Messages.IS_HAZARDOUS);
   			}
   			
   			// Create the cell editors

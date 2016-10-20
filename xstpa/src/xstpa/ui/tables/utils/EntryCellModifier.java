@@ -9,6 +9,7 @@ import xstpa.model.ContextTableCombination;
 import xstpa.model.ControlActionEntry;
 import xstpa.model.ProcessModelValue;
 import xstpa.ui.View;
+import xstpa.Messages;
 
 public class EntryCellModifier implements ICellModifier {
 	  private Viewer viewer;
@@ -47,7 +48,7 @@ public class EntryCellModifier implements ICellModifier {
 		// if Controller with PMEntry calls 
 		if (ProcessModelValue.class == element.getClass()) {
 			ProcessModelValue entry = (ProcessModelValue) element;
-			if (View.COMMENTS.equals(property)) {
+			if (Messages.COMMENTS.equals(property)) {
 
 				return entry.getComments();
 			}
@@ -59,10 +60,10 @@ public class EntryCellModifier implements ICellModifier {
 		// if Control ActionEntry calls
 		else if (ControlActionEntry.class == element.getClass()){
 			ControlActionEntry entry = (ControlActionEntry) element;
-			if (View.SAFETY_CRITICAL.equals(property)) {
+			if (Messages.SAFETY_CRITICAL.equals(property)) {
 		      return Boolean.valueOf(entry.getSafetyCritical());
 			}
-			else if (View.COMMENTS.equals(property)) {
+			else if (Messages.COMMENTS.equals(property)) {
 				return entry.getComments();
 			}
 			else {
@@ -72,22 +73,22 @@ public class EntryCellModifier implements ICellModifier {
 		
 		else {
 			ContextTableCombination entry = (ContextTableCombination) element;
-			if (View.IS_HAZARDOUS.equals(property)) {
+			if (Messages.IS_HAZARDOUS.equals(property)) {
 		      return Boolean.valueOf(entry.getGlobalHazardous());
 			}
 			
-			else if (View.HAZ_IF_ANYTIME.equals(property)) {
+			else if (Messages.HAZ_IF_ANYTIME.equals(property)) {
 			      return Boolean.valueOf(entry.getHAnytime());
 				}
 			
-			else if (View.HAZ_IF_EARLY.equals(property)) {
+			else if (Messages.HAZ_IF_EARLY.equals(property)) {
 			      return Boolean.valueOf(entry.getHEarly());
 				}
 			
-			else if (View.HAZ_IF_LATE.equals(property)) {
+			else if (Messages.HAZ_IF_LATE.equals(property)) {
 			      return Boolean.valueOf(entry.getHLate());
 				}
-			else if (View.REFINED_RULES.equals(property)) {
+			else if (Messages.REFINED_RULES.equals(property)) {
 				return entry.getRefinedSafetyRequirements();
 			}
 			
@@ -115,7 +116,7 @@ public class EntryCellModifier implements ICellModifier {
 	    // if ControllerWithPMEntry calls
 	    if (ProcessModelValue.class == element.getClass()) {
 	    	ProcessModelValue entry = (ProcessModelValue) element;
-	    	if (View.COMMENTS.equals(property)) {
+	    	if (Messages.COMMENTS.equals(property)) {
 	  	      	entry.setComments((String)value);
 	  	      	model.setCSComponentComment(entry.getId(), (String) value); 
 	    	}
@@ -123,11 +124,11 @@ public class EntryCellModifier implements ICellModifier {
 	    // if ControlActionEntrys calls
 	    else if (ControlActionEntry.class == element.getClass()){
 	    	ControlActionEntry entry = (ControlActionEntry) element;
-	    	if (View.SAFETY_CRITICAL.equals(property)) {
+	    	if (Messages.SAFETY_CRITICAL.equals(property)) {
 	  	      entry.setSafetyCritical(!(Boolean)entry.getSafetyCritical());
 	  	      model.setCASafetyCritical(entry.getId(), entry.getSafetyCritical());
 	    	}
-	    	else if (View.COMMENTS.equals(property)){
+	    	else if (Messages.COMMENTS.equals(property)){
 	    		entry.setComments((String) value);
 	    		model.setControlActionDescription(entry.getId(), (String)value);
 	    	}
@@ -135,19 +136,19 @@ public class EntryCellModifier implements ICellModifier {
 	    
 	    else {
 	    	ContextTableCombination entry = (ContextTableCombination) element;
-	    	if (View.IS_HAZARDOUS.equals(property)) {
+	    	if (Messages.IS_HAZARDOUS.equals(property)) {
 		  	      entry.setHazardous((!(Boolean)entry.getGlobalHazardous()));
 		    	}
-	    	if (View.HAZ_IF_ANYTIME.equals(property)) {
+	    	if (Messages.HAZ_IF_ANYTIME.equals(property)) {
 		  	      entry.setHAnytime((!(Boolean)entry.getHAnytime()));
 		    	}
-	    	if (View.HAZ_IF_EARLY.equals(property)) {
+	    	if (Messages.HAZ_IF_EARLY.equals(property)) {
 		  	      entry.setHEarly((!(Boolean)entry.getHEarly()));
 		    	}
-	    	if (View.HAZ_IF_LATE.equals(property)) {
+	    	if (Messages.HAZ_IF_LATE.equals(property)) {
 		  	      entry.setHLate((!(Boolean)entry.getHLate()));
 		    	}
-	    	if (View.REFINED_RULES.equals(property)) {
+	    	if (Messages.REFINED_RULES.equals(property)) {
 	    		entry.setRefinedSafetyRequirements((String) value);
 	    		
 	    	}

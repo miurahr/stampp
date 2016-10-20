@@ -47,45 +47,52 @@ public class RefinedRulesTable extends AbstractTableComposite {
 		@Override
 		public Image getColumnImage(Object element, int columnIndex) {
 			String columnName = columns[columnIndex];
-			if(columnName.equals(View.UCA)){
+			if(columnName.equals(Messages.UCA)){
 				return View.ADD;
 			}
 			return null;
 		}
 
+    //
+    //ENTRY_ID: 0
+    //CONTROL_ACTIONS: 1
+    //CONTEXT: 2
+    //CONTEXT_TYPE: 3
+    //
+    //CRITICAL_COMBI:	?
+    //
+    //UCA: 4
+    //REL_HAZ: 5
+    //REFINED_RULES: 6
 		@Override
 		public String getColumnText(Object element, int columnIndex) {
 			String columnName = columns[columnIndex];
 			RefinedSafetyEntry entry = (RefinedSafetyEntry) element;
-			switch (columnName) {
-			case View.ENTRY_ID:
+			switch (columnIndex) {
+  		case 0:
 				return RefinedSafetyEntry.Literal + String.valueOf(refinedSafetyContent.indexOf(entry)+1);
-			case View.CONTROL_ACTIONS:
+			case 1:
 				return entry.getCombination().getLinkedControlActionName();
-			case View.CONTEXT:
+			case 2:
 				return entry.getContext();
-			case View.CONTEXT_TYPE:
+			case 3:
 				if(!entry.getType().equals(IValueCombie.TYPE_NOT_PROVIDED)){
 					return entry.getType();
 				}else{
 					return null;
 				}
-			case View.CRITICAL_COMBI:	
-				return entry.getCriticalCombinations(" == ", ",", false, false, true); //$NON-NLS-1$ //$NON-NLS-2$
-				
-			case View.UCA:
+		  //		return entry.getCriticalCombinations(" == ", ",", false, false, true); //$NON-NLS-1$ //$NON-NLS-2$
+ 			case 4:
 				String tempUcas =entry.getUCALinks();
 				if (tempUcas.isEmpty()) {
 					return Messages.RefinedRulesTable_EditUCALinks;
 				}
 				return tempUcas;
-			case View.REL_HAZ:
+  		case 5:
 				return entry.getRelatedHazards();
-			case View.REFINED_RULES:
-
+ 			case 6: 
 				return entry.getRefinedRule();
 			}
-
 				
 			return null;
 		}
@@ -96,8 +103,8 @@ public class RefinedRulesTable extends AbstractTableComposite {
 	private List<RefinedSafetyEntry> refinedSafetyContent;
 	private Table refinedSafetyTable;
 	private String[] columns = new String[]{
-			View.ENTRY_ID,View.CONTROL_ACTIONS,View.CONTEXT,Messages.RefinedRulesTable_Type,
-			View.UCA,View.REL_HAZ,View.REFINED_RULES
+			Messages.ENTRY_ID,Messages.CONTROL_ACTIONS,Messages.CONTEXT,Messages.CONTEXT_TYPE,
+			Messages.UCA,Messages.REL_HAZ,Messages.REFINED_RULES
 	};
 	
 	public RefinedRulesTable(Composite parent) {

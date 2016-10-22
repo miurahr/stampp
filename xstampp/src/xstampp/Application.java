@@ -78,12 +78,12 @@ public class Application implements IApplication {
         ChooseWorkLocation.initializeWs();
       }
 
-      if (ChooseWorkLocation.getLastUsedWorkspace() != null) {
-        instanceLoc.set(new URL(Messages.File,
-                                null,
-                                ChooseWorkLocation.getLastUsedWorkspace()), false);
-      }
-
+			if (ChooseWorkLocation.getLastUsedWorkspace() != null) {
+				instanceLoc.set(
+						new URL("file", null, ChooseWorkLocation // URL schema file:// $NON-NLS-1$
+								.getLastUsedWorkspace()), false);
+			}
+	
     } catch (Exception exept){
       exept.printStackTrace();
       logger.info(Messages.TheWorkspaceCannotBeChangedWhen + Messages.UsuallyTheIDEStarts);

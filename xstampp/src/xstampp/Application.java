@@ -82,7 +82,7 @@ public class Application implements IApplication {
 
 			if (ChooseWorkLocation.getLastUsedWorkspace() != null) {
 				instanceLoc.set(
-						new URL(Messages.File, null, ChooseWorkLocation
+						new URL("file", null, ChooseWorkLocation // URL schema file:// $NON-NLS-1$
 								.getLastUsedWorkspace()), false);
 			}
 			

@@ -1,0 +1,16 @@
+* text=auto
+
+*.bat text eol=crlf
+*.inf text
+*.ini text
+*.java text
+*.properties text
+*.xml text
+
+*.bmp binary
+*.nsh binary
+*.nsi binary
+*.jar binary
+*.pdf binary
+*.png binary
+*.jpg binary

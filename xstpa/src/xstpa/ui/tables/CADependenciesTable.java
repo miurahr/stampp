@@ -33,6 +33,7 @@ import org.eclipse.swt.widgets.TabItem;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 
+import xstpa.Messages;
 import xstpa.model.ControlActionEntry;
 import xstpa.model.ProcessModelVariables;
 import xstpa.ui.View;
@@ -181,8 +182,8 @@ public class CADependenciesTable extends AbstractTableComposite {
 		    dependencyTable.setLinesVisible(true);
 			dependencyTable.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		    // Columns for Dependencies table
-		    new TableColumn(dependencyTable, SWT.LEFT).setText(View.ENTRY_ID);
-		    new TableColumn(dependencyTable, SWT.LEFT).setText(View.CONTROL_ACTIONS);
+		    new TableColumn(dependencyTable, SWT.LEFT).setText(Messages.ENTRY_ID);
+		    new TableColumn(dependencyTable, SWT.LEFT).setText(Messages.CONTROL_ACTIONS);
 		    
 		    
 			dependencyTopTable = dependencyTopTableViewer.getTable();
@@ -190,18 +191,18 @@ public class CADependenciesTable extends AbstractTableComposite {
 		    dependencyTopTable.setHeaderVisible(true);
 		    dependencyTopTable.setLinesVisible(true);
 		    // Columns for dependencies top (Process model Variables)
-		    new TableColumn(dependencyTopTable, SWT.LEFT).setText(View.ENTRY_ID);
-		    new TableColumn(dependencyTopTable, SWT.LEFT).setText(View.CONTROLLER);
-		    new TableColumn(dependencyTopTable, SWT.LEFT).setText(View.PMV);
+		    new TableColumn(dependencyTopTable, SWT.LEFT).setText(Messages.ENTRY_ID);
+		    new TableColumn(dependencyTopTable, SWT.LEFT).setText(Messages.CONTROLLER);
+		    new TableColumn(dependencyTopTable, SWT.LEFT).setText(Messages.PMV);
 		    
 			dependencyBottomTable = dependencyBottomTableViewer.getTable();
 		    dependencyBottomTable.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		    dependencyBottomTable.setHeaderVisible(true);
 		    dependencyBottomTable.setLinesVisible(true);
 		    // Columns for dependencies bottom (Dependencies)
-		    new TableColumn(dependencyBottomTable, SWT.LEFT).setText(View.ENTRY_ID);
-		    new TableColumn(dependencyBottomTable, SWT.LEFT).setText(View.CONTROLLER);
-		    new TableColumn(dependencyBottomTable, SWT.LEFT).setText(View.PMV);
+		    new TableColumn(dependencyBottomTable, SWT.LEFT).setText(Messages.ENTRY_ID);
+		    new TableColumn(dependencyBottomTable, SWT.LEFT).setText(Messages.CONTROLLER);
+		    new TableColumn(dependencyBottomTable, SWT.LEFT).setText(Messages.PMV);
 		//==============================================================================
 		//START Table functionality definition
 		//==============================================================================

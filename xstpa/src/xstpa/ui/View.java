@@ -37,6 +37,7 @@ import org.eclipse.ui.part.ViewPart;
 import xstampp.ui.common.ProjectManager;
 import xstampp.ui.editors.StandartEditorPart;
 import xstpa.Activator;
+import xstpa.Messages;
 import xstpa.model.XSTPADataController;
 import xstpa.ui.tables.AbstractTableComposite;
 import xstpa.ui.tables.CADependenciesTable;
@@ -47,75 +48,28 @@ import xstpa.ui.tables.RefinedRulesTable;
 
 public class View extends ViewPart{
 	public static final String ID = "xstpa.view.contextTables";
-	
-	// Table column names/properties
-	public static final String CONTROLLER = "Controllers";
 
-	public static final String PM = "Process Models";
-
-	public static final String PMV = "Process Model Variables";
-
-	public static final String PMVV = "Values";
-	
-	public static final String COMMENTS = "Description";
-	
-	public static final String CONTROL_ACTIONS = "Control Actions";
-	
-	public static final String SAFETY_CRITICAL = "Safety Critical";
-	
+	// Table column properties
 	public static final String CONTROLLER_WITH_PM_CLASS = "xstpa.ControllerWithPMEntry";
-	
 	public static final String CA_ENTRY_CLASS = "xstpa.ControlActionEntrys";
-	
 	public static final String PM_VALUE_CLASS = "xstpa.ProcessModelVariables";
-	
-	public static final String ENTRY_ID = "ID";
-	
-	public static final String LIST_of_CA = "List of Control Actions";
-	
-	public static final String CONTEXT = "Context";
-	
-	public static final String IS_HAZARDOUS = "Hazardous?";
-	
-	public static final String HAZ_IF_ANYTIME = "Hazardous if provided anytime";
-	
-	/**
-	 * String <i>Hazardous if provided to early</i> 
-	 */
-	public static final String HAZ_IF_EARLY = "Hazardous if provided to early";
-	
-	public static final String HAZ_IF_LATE = "Hazardous if provided to late";
-	
-	public static final String LTL_RULES = "LTL Formula";
-	
-	public static final String UCA = "Related Unsafe CA";
 
-	public static final String REL_HAZ = "Linked Hazards";
-	
-	public static final String REFINED_RULES = "generated Rules";
-	
-	public static final String CRITICAL_COMBI = "Critical Combinations";
-
-	public static final String CONTEXT_TABLE="Context Table";
-	
-	public static final String CONTEXT_TYPE="Type";
 	/**
 	 * String array that contains all headers for the columns of the 
 	 * properties table that shows all process values
 	 */
-	public static final String[] PROPS_COLUMNS = { CONTROLLER, PM, PMV, PMVV, COMMENTS };
-	public static final String RULES_TABLE = "Rules Table";
+	public static final String[] PROPS_COLUMNS = { Messages.CONTROLLER, Messages.PM, Messages.PMV, Messages.PMVV, Messages.COMMENTS };
 	/**
 	 * String array that contains all headers for the columns of the 
 	 * control actions table that contains all stored control actions
 	 */
-	public static final String[] CA_PROPS_COLUMNS = { CONTROL_ACTIONS, SAFETY_CRITICAL, COMMENTS};
-	
+	public static final String[] CA_PROPS_COLUMNS = { Messages.CONTROL_ACTIONS, Messages.SAFETY_CRITICAL, Messages.COMMENTS};
+
 	/**
 	 * String array that contains all headers for the columns of the 
 	 * refined safety constraints table that cpntains all process values
 	 */
-	public static final String[] RS_PROPS_COLUMS = { ENTRY_ID, CONTROL_ACTIONS, CONTEXT, CRITICAL_COMBI, UCA, REL_HAZ, REFINED_RULES};
+	public static final String[] RS_PROPS_COLUMS = { Messages.ENTRY_ID, Messages.CONTROL_ACTIONS, Messages.CONTEXT, Messages.CRITICAL_COMBI, Messages.UCA, Messages.REL_HAZ, Messages.REFINED_RULES};
 
 	
 	// static fields to hold the images
@@ -155,7 +109,6 @@ public class View extends ViewPart{
 	
 	Table  ltlTable;
 	
-	
 
 	private List<AbstractTableComposite> tableList;
 	private List<Button> tableButtons;
@@ -172,7 +125,7 @@ public class View extends ViewPart{
 	 */
 	public void createPartControl(Composite parent) {
 	    // set title and Image
-	    setPartName("Context Tables");
+	    setPartName(Messages.CONTEXT_TABLE);
 	    //this.setContentDescription("Shows the Process Models and Context Tables");
 	    setTitleImage(LOGO);
 	    
@@ -208,19 +161,19 @@ public class View extends ViewPart{
 	    this.tableList = new ArrayList<>();
 	    
 	    AbstractTableComposite mainTable = new ProcessValuesTable(xstpaTableComposite);
-	    addTable(mainTable, PM);
+	    addTable(mainTable, Messages.PM);
 	    
 	    AbstractTableComposite compositeTable = new ControlActionTable(xstpaTableComposite);
-	    addTable(compositeTable, "Control Actions");
+	    addTable(compositeTable, Messages.CONTROL_ACTIONS);
 	    
 	    compositeTable = new CADependenciesTable(xstpaTableComposite);
-	    addTable(compositeTable, "Dependencies");
+	    addTable(compositeTable, Messages.DEPENDENCIES_TABLE);
 	    
 	    compositeTable = new ProcessContextTable(xstpaTableComposite);
-	    addTable(compositeTable, "Context Table");
+	    addTable(compositeTable, Messages.CONTEXT_TABLE);
 	    
 	    compositeTable = new RefinedRulesTable(xstpaTableComposite);
-	    addTable(compositeTable, RULES_TABLE);
+	    addTable(compositeTable, Messages.RULES_TABLE);
 	    
 	    IEditorPart part = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 	    if(part != null && part instanceof StandartEditorPart){

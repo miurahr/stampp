@@ -10,8 +10,8 @@
  *******************************************************************************/
 package xstampp.astpa.wizards.stepImages;
 
-import messages.Messages;
 import xstampp.astpa.Activator;
+import xstampp.astpa.Messages;
 import xstampp.astpa.ui.sds.SafetyConstraintView;
 import xstampp.astpa.wizards.AbstractExportWizard;
 import xstampp.ui.wizards.TableExportPage;

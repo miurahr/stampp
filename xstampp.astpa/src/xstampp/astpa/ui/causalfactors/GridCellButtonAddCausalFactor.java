@@ -15,7 +15,7 @@ import java.util.UUID;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.graphics.Rectangle;
 
-import messages.Messages;
+import xstampp.astpa.Messages;
 import xstampp.astpa.model.causalfactor.interfaces.ICausalComponent;
 import xstampp.astpa.model.interfaces.ICausalFactorDataModel;
 import xstampp.ui.common.ProjectManager;

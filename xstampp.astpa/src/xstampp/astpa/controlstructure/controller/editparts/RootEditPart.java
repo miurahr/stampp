@@ -24,7 +24,7 @@ import org.eclipse.gef.editparts.LayerManager;
 import org.eclipse.gef.editpolicies.SnapFeedbackPolicy;
 import org.eclipse.jface.preference.IPreferenceStore;
 
-import messages.Messages;
+import xstampp.astpa.Messages;
 import xstampp.astpa.controlstructure.controller.policys.CSConnectionPolicy;
 import xstampp.astpa.controlstructure.controller.policys.CSEditPolicy;
 import xstampp.astpa.controlstructure.figure.RootFigure;

@@ -17,8 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
-import messages.Messages;
-
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.jface.resource.FontDescriptor;
@@ -66,6 +64,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 
 import xstampp.Activator;
+import xstampp.astpa.Messages;
 import xstampp.astpa.model.interfaces.ISystemDescriptionViewDataModel;
 import xstampp.model.IDataModel;
 import xstampp.model.ObserverValue;

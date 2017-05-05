@@ -11,7 +11,7 @@
  * 
  *******************************************************************************/
 
-package messages;
+package xstampp.astpa;
 
 import org.eclipse.osgi.util.NLS;
 
@@ -27,7 +27,7 @@ public final class Messages extends NLS {
     // initialize resource bundle
     NLS.initializeMessages(Messages.BUNDLE_NAME, Messages.class);
   }
-  private static final String BUNDLE_NAME = "messages.messages"; //$NON-NLS-1$
+  private static final String BUNDLE_NAME = "xstampp.astpa.messages"; //$NON-NLS-1$
   // *-------A-------------------------------------------------------------------*
   @SuppressWarnings("javadoc")
   public static String Accidents;

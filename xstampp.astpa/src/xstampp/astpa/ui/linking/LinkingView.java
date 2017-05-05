@@ -48,8 +48,8 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 
-import messages.Messages;
 import xstampp.astpa.Activator;
+import xstampp.astpa.Messages;
 import xstampp.astpa.haz.ITableModel;
 import xstampp.astpa.model.hazacc.ATableModel;
 import xstampp.astpa.model.interfaces.ILinkingViewDataModel;

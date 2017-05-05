@@ -10,8 +10,8 @@
  *******************************************************************************/
 package xstampp.astpa.wizards.pdf;
 
-import messages.Messages;
 import xstampp.astpa.Activator;
+import xstampp.astpa.Messages;
 import xstampp.astpa.model.DataModelController;
 import xstampp.astpa.wizards.AbstractExportWizard;
 import xstampp.ui.common.ProjectManager;

@@ -54,8 +54,8 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IWorkbenchPart;
 
-import messages.Messages;
 import xstampp.astpa.Activator;
+import xstampp.astpa.Messages;
 import xstampp.astpa.haz.ITableModel;
 import xstampp.astpa.model.hazacc.ATableModel;
 import xstampp.model.IDataModel;

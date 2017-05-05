@@ -10,8 +10,6 @@
  *******************************************************************************/
 package xstampp.astpa.preferences;
 
-import messages.Messages;
-
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.ColorFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
@@ -19,6 +17,7 @@ import org.eclipse.jface.preference.FontFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
+import xstampp.astpa.Messages;
 import xstampp.preferences.IControlStructureConstants;
 
 

@@ -13,8 +13,6 @@
 
 package xstampp.astpa.controlstructure;
 
-import messages.Messages;
-
 import org.eclipse.draw2d.Viewport;
 import org.eclipse.gef.palette.CombinedTemplateCreationEntry;
 import org.eclipse.gef.palette.MarqueeToolEntry;
@@ -31,6 +29,7 @@ import org.eclipse.ui.contexts.IContextActivation;
 import org.eclipse.ui.contexts.IContextService;
 
 import xstampp.astpa.Activator;
+import xstampp.astpa.Messages;
 import xstampp.astpa.controlstructure.controller.factorys.CSModelCreationFactory;
 import xstampp.astpa.controlstructure.utilities.DragSelectionToolEntry;
 import xstampp.astpa.model.controlstructure.components.ComponentType;

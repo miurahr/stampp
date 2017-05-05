@@ -14,8 +14,8 @@
  */
 package xstampp.astpa.wizards.stepData;
 
-import messages.Messages;
 import xstampp.astpa.Activator;
+import xstampp.astpa.Messages;
 import xstampp.astpa.ui.acchaz.AccidentsView;
 import xstampp.astpa.util.jobs.ICSVExportConstants;
 import xstampp.astpa.wizards.AbstractExportWizard;

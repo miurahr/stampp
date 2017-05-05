@@ -17,7 +17,7 @@ import java.util.UUID;
 
 import org.eclipse.draw2d.geometry.Rectangle;
 
-import messages.Messages;
+import xstampp.astpa.Messages;
 import xstampp.astpa.controlstructure.CSEditor;
 import xstampp.astpa.controlstructure.controller.policys.CSEditPolicy;
 import xstampp.astpa.model.controlstructure.components.Component;

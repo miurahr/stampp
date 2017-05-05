@@ -16,7 +16,7 @@ package xstampp.astpa.ui.unsafecontrolaction;
 import java.util.List;
 import java.util.UUID;
 
-import messages.Messages;
+import xstampp.astpa.Messages;
 import xstampp.astpa.haz.ITableModel;
 import xstampp.astpa.model.interfaces.IUnsafeControlActionDataModel;
 import xstampp.ui.common.contentassist.ITableContentProvider;

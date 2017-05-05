@@ -10,7 +10,7 @@
  *******************************************************************************/
 package xstampp.astpa.wizards.pdf;
 
-import messages.Messages;
+import xstampp.astpa.Messages;
 import xstampp.astpa.ui.systemdescription.SystemDescriptionView;
 import xstampp.astpa.wizards.AbstractExportWizard;
 import xstampp.astpa.wizards.pages.SystemDescriptionExportPage;

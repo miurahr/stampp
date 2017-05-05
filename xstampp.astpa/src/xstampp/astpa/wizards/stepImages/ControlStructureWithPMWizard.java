@@ -10,7 +10,7 @@
  *******************************************************************************/
 package xstampp.astpa.wizards.stepImages;
 
-import messages.Messages;
+import xstampp.astpa.Messages;
 import xstampp.astpa.controlstructure.CSEditorWithPM;
 import xstampp.astpa.wizards.pages.ControlStructureExportPage;
 

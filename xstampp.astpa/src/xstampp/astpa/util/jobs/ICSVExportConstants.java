@@ -12,7 +12,7 @@ package xstampp.astpa.util.jobs;
 
 import java.util.ArrayList;
 
-import messages.Messages;
+import xstampp.astpa.Messages;
 
 /**
  * @since 2.0

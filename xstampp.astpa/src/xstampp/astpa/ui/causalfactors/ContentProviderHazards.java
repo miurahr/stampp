@@ -16,7 +16,7 @@ package xstampp.astpa.ui.causalfactors;
 import java.util.List;
 import java.util.UUID;
 
-import messages.Messages;
+import xstampp.astpa.Messages;
 import xstampp.astpa.haz.ITableModel;
 import xstampp.astpa.model.causalfactor.interfaces.CausalFactorEntryData;
 import xstampp.astpa.model.causalfactor.interfaces.ICausalFactorEntry;

@@ -13,10 +13,9 @@
 
 package xstampp.astpa.ui;
 
-import messages.Messages;
-
 import org.eclipse.jface.viewers.Viewer;
 
+import xstampp.astpa.Messages;
 import xstampp.astpa.model.controlaction.safetyconstraint.ICorrespondingUnsafeControlAction;
 import xstampp.astpa.model.hazacc.ATableModel;
 import xstampp.astpa.ui.sds.ModeFilter;

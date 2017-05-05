@@ -24,13 +24,12 @@ import java.util.Observable;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 
-import messages.Messages;
-
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 
+import xstampp.astpa.Messages;
 import xstampp.astpa.haz.HAZController;
 import xstampp.astpa.haz.IHAZModel;
 import xstampp.model.IDataModel;

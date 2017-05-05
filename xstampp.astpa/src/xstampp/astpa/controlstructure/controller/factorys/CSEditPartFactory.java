@@ -19,13 +19,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import messages.Messages;
-
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartFactory;
 import org.eclipse.jface.preference.IPreferenceStore;
 
+import xstampp.astpa.Messages;
 import xstampp.astpa.controlstructure.controller.editparts.ActuatorEditPart;
 import xstampp.astpa.controlstructure.controller.editparts.CSAbstractEditPart;
 import xstampp.astpa.controlstructure.controller.editparts.CSConnectionEditPart;

@@ -20,9 +20,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-import messages.Messages;
-
 import org.eclipse.swt.custom.StyleRange;
+
+import xstampp.astpa.Messages;
 
 /**
  * Class for main informations about the A-STPA-Project

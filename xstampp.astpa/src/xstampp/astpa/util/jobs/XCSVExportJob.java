@@ -20,14 +20,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import messages.Messages;
-
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 
+import xstampp.astpa.Messages;
 import xstampp.astpa.haz.controlaction.interfaces.IControlAction;
 import xstampp.astpa.model.DataModelController;
 import xstampp.astpa.model.controlaction.interfaces.IHAZXControlAction;

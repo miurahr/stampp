@@ -12,11 +12,10 @@ package xstampp.astpa.wizards.stepData;
 
 import java.io.IOException;
 
-import messages.Messages;
-
 import org.eclipse.jface.dialogs.MessageDialog;
 
 import xstampp.astpa.Activator;
+import xstampp.astpa.Messages;
 import xstampp.astpa.util.jobs.XCSVExportJob;
 import xstampp.astpa.wizards.AbstractExportWizard;
 import xstampp.model.IDataModel;

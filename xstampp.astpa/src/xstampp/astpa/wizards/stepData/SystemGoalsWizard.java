@@ -10,8 +10,8 @@
  *******************************************************************************/
 package xstampp.astpa.wizards.stepData;
 
-import messages.Messages;
 import xstampp.astpa.Activator;
+import xstampp.astpa.Messages;
 import xstampp.astpa.ui.sds.SystemGoalView;
 import xstampp.astpa.util.jobs.ICSVExportConstants;
 import xstampp.astpa.wizards.AbstractExportWizard;

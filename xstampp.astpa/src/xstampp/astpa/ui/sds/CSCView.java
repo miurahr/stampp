@@ -16,7 +16,7 @@ package xstampp.astpa.ui.sds;
 import java.util.List;
 import java.util.Observable;
 
-import messages.Messages;
+import xstampp.astpa.Messages;
 import xstampp.astpa.model.controlaction.safetyconstraint.ICorrespondingUnsafeControlAction;
 import xstampp.astpa.model.interfaces.ICorrespondingSafetyConstraintDataModel;
 import xstampp.astpa.ui.ATableFilter;

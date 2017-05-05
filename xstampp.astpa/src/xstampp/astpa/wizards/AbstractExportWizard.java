@@ -13,8 +13,6 @@ package xstampp.astpa.wizards;
 import java.io.File;
 import java.io.IOException;
 
-import messages.Messages;
-
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -27,6 +25,7 @@ import org.eclipse.ui.IExportWizard;
 import org.eclipse.ui.IWorkbench;
 
 import xstampp.astpa.Activator;
+import xstampp.astpa.Messages;
 import xstampp.astpa.util.jobs.ExportJob;
 import xstampp.astpa.util.jobs.StpaCSVExport;
 import xstampp.model.IDataModel;

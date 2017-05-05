@@ -13,13 +13,12 @@
 
 package xstampp.astpa.wizards.pdf;
 
-import messages.Messages;
-
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.jface.preference.IPreferenceStore;
 
 import xstampp.astpa.Activator;
+import xstampp.astpa.Messages;
 import xstampp.astpa.model.DataModelController;
 import xstampp.astpa.util.jobs.STPAWordJob;
 import xstampp.astpa.wizards.AbstractExportWizard;

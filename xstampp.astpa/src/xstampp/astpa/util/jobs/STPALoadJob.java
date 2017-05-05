@@ -34,8 +34,6 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 
-import messages.Messages;
-
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -43,6 +41,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.xml.sax.SAXException;
 
+import xstampp.astpa.Messages;
 import xstampp.astpa.haz.HAZController;
 import xstampp.astpa.model.DataModelController;
 import xstampp.model.IDataModel;

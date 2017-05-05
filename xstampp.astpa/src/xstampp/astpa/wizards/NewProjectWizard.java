@@ -13,8 +13,6 @@ package xstampp.astpa.wizards;
 import java.util.HashMap;
 import java.util.Map;
 
-import messages.Messages;
-
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
@@ -22,6 +20,7 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 
 import xstampp.astpa.Activator;
+import xstampp.astpa.Messages;
 import xstampp.ui.wizards.NewProjectPage;
 import xstampp.util.STPAPluginUtils;
 

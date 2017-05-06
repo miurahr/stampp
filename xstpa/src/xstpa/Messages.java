@@ -95,6 +95,19 @@ public class Messages extends NLS {
 	public static String CONTEXT_TYPE;
 	public static String RULES_TABLE;
 	public static String DEPENDENCIES_TABLE;
+  public static String FIELD_EDITOR_HELP;
+	public static String PREFERENCE_PAGE_DESC;
+	public static String ADD_NEW_ENTRY;
+	public static String ADD_ENTRY;
+	public static String CANCEL;
+	public static String ADD_UNSAFE_CONTROL_ACTIONS;
+	public static String ALL_UNSAFE_CONTROL_ACTIONS;
+	public static String LINKED_UNSAFE_CONTROL_ACTIONS;
+	public static String EDIT_UCA_OK;
+	public static String EDIT_UCA_REMOVE;
+	public static String EDIT_UCA_ADD;
+	public static String CONTROL_ACTION_PROVIDED;
+	public static String CONTROL_ACTION_NOT_PROVIDED;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

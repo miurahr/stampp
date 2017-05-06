@@ -1,5 +1,7 @@
 package acast.ui.accidentDescription;
 
+import messages.Messages;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -522,7 +524,7 @@ public class ProximalEventsView extends StandartEditorPart implements IPropertyC
 				if (viewer.getTable().getSelectionIndex() == -1) {
 					MessageBox dialog = new MessageBox(parent.getShell(), SWT.ICON_INFORMATION | SWT.OK);
 					dialog.setText("Warning");
-					dialog.setMessage("No Event selected");
+					dialog.setMessage(Messages.NoEventSelected);
 
 					dialog.open();
 					return;

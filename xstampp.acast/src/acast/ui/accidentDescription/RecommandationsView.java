@@ -1,5 +1,7 @@
 package acast.ui.accidentDescription;
 
+import messages.Messages;
+
 import java.util.UUID;
 
 import org.eclipse.jface.layout.TableColumnLayout;
@@ -216,7 +218,7 @@ public class RecommandationsView extends StandartEditorPart {
 				if (combo.getItemCount() == 0) {
 					MessageBox dialog = new MessageBox(parent2.getShell(), SWT.ICON_INFORMATION | SWT.OK);
 					dialog.setText("Warning");
-					dialog.setMessage("Create Components in Controlstruture first");
+					dialog.setMessage(Messages.CreateComponentsFirst);
 
 					dialog.open();
 					return;

@@ -143,6 +143,8 @@ public final class Messages extends NLS {
   @SuppressWarnings("javadoc")
   public static String CreateProcessVariable;
   @SuppressWarnings("javadoc")
+	public static String CreateComponentsFirst;
+  @SuppressWarnings("javadoc")
   public static String CreateProcessValue;
   @SuppressWarnings("javadoc")
   public static String ConnectingElements;
@@ -454,6 +456,8 @@ public final class Messages extends NLS {
   public static String NoDataSelected;
   @SuppressWarnings("javadoc")
   public static String NoDesignRequirementSelected;
+  @SuppressWarnings("javadoc")
+  public static String NoEventSelected;
   @SuppressWarnings("javadoc")
   public static String NoExportAvailable;
   @SuppressWarnings("javadoc")

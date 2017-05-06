@@ -37,6 +37,7 @@ import org.eclipse.swt.widgets.Shell;
 import xstampp.astpa.model.controlaction.safetyconstraint.ICorrespondingUnsafeControlAction;
 import xstampp.astpa.model.interfaces.IExtendedDataModel;
 import xstpa.ui.View;
+import xstpa.Messages;
 
 public class EditRelatedUcaWizard {
     // ==================== 2. Instance Fields ============================
@@ -57,7 +58,7 @@ public class EditRelatedUcaWizard {
 		shell = new Shell(Display.getCurrent().getActiveShell(),SWT.CLOSE |SWT.RESIZE | SWT.TITLE| SWT.APPLICATION_MODAL );
         shell.setLayout(new GridLayout(2, false));
         
-        shell.setText("Add Unsafe Control Actions");
+        shell.setText(Messages.ADD_UNSAFE_CONTROL_ACTIONS);
         shell.setImage(View.LOGO);
         shell.addShellListener(new ShellAdapter() {
     			@Override
@@ -105,7 +106,7 @@ public class EditRelatedUcaWizard {
       data.left = new FormAttachment(margin);
       data.height = 30;
       availableLable.setLayoutData(data);
-	    availableLable.setText("All Unsafe Control Actions");
+	    availableLable.setText(Messages.ALL_UNSAFE_CONTROL_ACTIONS);
     	
 	    // Add the Label for relationParamListComposite
 	    Label linkedLable = new Label(shell, SWT.NONE);
@@ -114,11 +115,11 @@ public class EditRelatedUcaWizard {
       data.right = new FormAttachment(100-margin);
       data.height = 30;
       linkedLable.setLayoutData(data);
-	    linkedLable.setText("Linked Unsafe Control Actions");
+	    linkedLable.setText(Messages.LINKED_UNSAFE_CONTROL_ACTIONS);
 	    
 	 // The Ok Button
       Button okBtn = new Button (shell, SWT.PUSH);
-      okBtn.setText("OK");
+      okBtn.setText(Messages.EDIT_UCA_OK);
       data = new FormData();
       data.bottom = new FormAttachment(100 - margin);
       data.left = new FormAttachment(margin);
@@ -128,7 +129,7 @@ public class EditRelatedUcaWizard {
       
       // The Add Button
       Button addHazard = new Button (shell, SWT.PUSH);
-      addHazard.setText("Add");
+      addHazard.setText(Messages.EDIT_UCA_ADD);
       data = new FormData();
       data.top = new FormAttachment(availableLable,margin);
       data.left = new FormAttachment(50);
@@ -137,7 +138,7 @@ public class EditRelatedUcaWizard {
       
       // The remove Button
       Button removeHazard = new Button (shell, SWT.PUSH);
-      removeHazard.setText("Remove");
+      removeHazard.setText(Messages.EDIT_UCA_REMOVE);
       data = new FormData();
       data.top = new FormAttachment(addHazard,margin);
       data.left = new FormAttachment(50);

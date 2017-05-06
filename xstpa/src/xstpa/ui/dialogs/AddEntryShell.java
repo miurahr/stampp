@@ -37,6 +37,7 @@ import org.eclipse.swt.widgets.Shell;
 import xstampp.astpa.model.controlstructure.interfaces.IRectangleComponent;
 import xstampp.astpa.model.interfaces.IExtendedDataModel;
 import xstpa.model.ContextTableCombination;
+import xstpa.Messages;
 
 
 public class AddEntryShell {
@@ -60,7 +61,7 @@ public class AddEntryShell {
 
 		this.shell = new Shell(Display.getCurrent().getActiveShell(),SWT.CLOSE | SWT.TITLE);
 		
-		this.shell.setText("Add New Entry");
+		this.shell.setText(Messages.ADD_NEW_ENTRY);
 		this.shell.addShellListener(new ShellAdapter() {
 			@Override
 			public void shellDeactivated(ShellEvent e) {
@@ -100,7 +101,7 @@ public class AddEntryShell {
 		btnComp.setLayout(new FillLayout(SWT.HORIZONTAL));
 		
 		Button addEntry = new Button(btnComp, SWT.PUSH);
-		addEntry.setText("Add Entry");
+		addEntry.setText(Messages.ADD_ENTRY);
 
 		addEntry.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -111,7 +112,7 @@ public class AddEntryShell {
 		});
 		
 		Button cancel = new Button(btnComp, SWT.PUSH);
-		cancel.setText("Cancel");
+		cancel.setText(Messages.CANCEL);
 		cancel.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {

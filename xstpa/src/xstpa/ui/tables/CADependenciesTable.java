@@ -38,6 +38,7 @@ import xstpa.model.ControlActionEntry;
 import xstpa.model.ProcessModelVariables;
 import xstpa.ui.View;
 import xstpa.ui.tables.utils.MainViewContentProvider;
+import xstpa.Messages;
 
 public class CADependenciesTable extends AbstractTableComposite {
 
@@ -111,9 +112,9 @@ public class CADependenciesTable extends AbstractTableComposite {
 	    dependenciesFolder.setLayout(new GridLayout(1, false));
 	    
 	    TabItem dependenciesTab1 = new TabItem(dependenciesFolder, SWT.NONE);
-	    dependenciesTab1.setText("Control Action Provided");
+	    dependenciesTab1.setText(Messages.CONTROL_ACTION_PROVIDED);
 	    TabItem dependenciesTab2 = new TabItem(dependenciesFolder, SWT.NONE);
-	    dependenciesTab2.setText("Control Action Not Provided");	
+	    dependenciesTab2.setText(Messages.CONTROL_ACTION_NOT_PROVIDED);	
 	    
 	    //Composite in which the folder items are located
 	    dependenciesOuterComposite = new Composite(dependenciesFolder, SWT.NONE);
